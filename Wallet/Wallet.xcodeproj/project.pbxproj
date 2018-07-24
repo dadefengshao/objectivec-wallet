@@ -15,7 +15,7 @@
 		B1839FA821076A6B001EAB1D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FA721076A6B001EAB1D /* HomeViewController.m */; };
 		B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FAA21076AC7001EAB1D /* BookViewController.m */; };
 		B1839FAD21076AF0001EAB1D /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FAC21076AF0001EAB1D /* NewItem.storyboard */; };
-		B1839FB62107725A001EAB1D /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FB52107725A001EAB1D /* NewItemViewController.swift */; };
+		B1839FB82107787A001EAB1D /* NewItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		B1839FA921076AC7001EAB1D /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		B1839FAA21076AC7001EAB1D /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		B1839FAC21076AF0001EAB1D /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
-		B1839FB421077259001EAB1D /* Wallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
-		B1839FB52107725A001EAB1D /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTableViewController.swift; sourceTree = "<group>"; };
+		B1839FBA2107870D001EAB1D /* Wallet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 				B1839FA721076A6B001EAB1D /* HomeViewController.m */,
 				B1839FA921076AC7001EAB1D /* BookViewController.h */,
 				B1839FAA21076AC7001EAB1D /* BookViewController.m */,
-				B1839FB52107725A001EAB1D /* NewItemViewController.swift */,
-				B1839FB421077259001EAB1D /* Wallet-Bridging-Header.h */,
+				B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */,
+				B1839FBA2107870D001EAB1D /* Wallet-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,9 +182,9 @@
 			files = (
 				B1839FA021076772001EAB1D /* main.m in Sources */,
 				B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */,
-				B1839FB62107725A001EAB1D /* NewItemViewController.swift in Sources */,
 				B1839F9221076770001EAB1D /* AppDelegate.m in Sources */,
 				B1839FA821076A6B001EAB1D /* HomeViewController.m in Sources */,
+				B1839FB82107787A001EAB1D /* NewItemTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
