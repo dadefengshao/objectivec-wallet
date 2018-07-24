@@ -15,7 +15,7 @@
 		B1839FA821076A6B001EAB1D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FA721076A6B001EAB1D /* HomeViewController.m */; };
 		B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FAA21076AC7001EAB1D /* BookViewController.m */; };
 		B1839FAD21076AF0001EAB1D /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FAC21076AF0001EAB1D /* NewItem.storyboard */; };
-		B1839FB021076B01001EAB1D /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FAF21076B01001EAB1D /* NewItemViewController.m */; };
+		B1839FB62107725A001EAB1D /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FB52107725A001EAB1D /* NewItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		B1839FA921076AC7001EAB1D /* BookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		B1839FAA21076AC7001EAB1D /* BookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		B1839FAC21076AF0001EAB1D /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
-		B1839FAE21076B01001EAB1D /* NewItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
-		B1839FAF21076B01001EAB1D /* NewItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
+		B1839FB421077259001EAB1D /* Wallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		B1839FB52107725A001EAB1D /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 				B1839FA721076A6B001EAB1D /* HomeViewController.m */,
 				B1839FA921076AC7001EAB1D /* BookViewController.h */,
 				B1839FAA21076AC7001EAB1D /* BookViewController.m */,
-				B1839FAE21076B01001EAB1D /* NewItemViewController.h */,
-				B1839FAF21076B01001EAB1D /* NewItemViewController.m */,
+				B1839FB52107725A001EAB1D /* NewItemViewController.swift */,
+				B1839FB421077259001EAB1D /* Wallet-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -139,6 +139,7 @@
 				TargetAttributes = {
 					B1839F8C21076770001EAB1D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -180,8 +181,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1839FA021076772001EAB1D /* main.m in Sources */,
-				B1839FB021076B01001EAB1D /* NewItemViewController.m in Sources */,
 				B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */,
+				B1839FB62107725A001EAB1D /* NewItemViewController.swift in Sources */,
 				B1839F9221076770001EAB1D /* AppDelegate.m in Sources */,
 				B1839FA821076A6B001EAB1D /* HomeViewController.m in Sources */,
 			);
@@ -323,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32P3VH37WD;
 				INFOPLIST_FILE = Wallet/Info.plist;
@@ -332,6 +334,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeveloperAcademy.Julianny.Wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wallet/Controller/Wallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -340,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32P3VH37WD;
 				INFOPLIST_FILE = Wallet/Info.plist;
@@ -349,6 +355,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.DeveloperAcademy.Julianny.Wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wallet/Controller/Wallet-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
