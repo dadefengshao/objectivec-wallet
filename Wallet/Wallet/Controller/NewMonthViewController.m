@@ -20,10 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
     
     _months = @[@"Janeiro",
                 @"Fevereiro",
@@ -37,6 +33,10 @@
                 @"Outubro",
                 @"Novembro",
                 @"Dezembro"];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 /*
