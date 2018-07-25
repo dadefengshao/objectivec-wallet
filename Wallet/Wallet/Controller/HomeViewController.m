@@ -10,6 +10,10 @@
 
 @interface HomeViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *balance;
+@property (weak, nonatomic) IBOutlet UILabel *expense;
+@property (weak, nonatomic) IBOutlet UILabel *income;
+
 @end
 
 @implementation HomeViewController

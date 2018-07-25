@@ -8,7 +8,12 @@
 
 #import "BookViewController.h"
 
-@interface BookViewController ()
+@interface BookViewController ()<UITableViewDataSource, UITableViewDelegate> {
+    NSMutableArray<NSString *> *months;
+    NSMutableArray<NSNumber *> *values;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,12 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self initializeMonths];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initializeMonths {
+    months = [NSMutableArray arrayWithArray:@[@"Junho", @"Julho"]];
+    values = [NSMutableArray arrayWithArray:@[@-100.55f, @249.00f]];
 }
 
 /*
@@ -33,5 +44,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+/*
+ #pragma mark - Table View methods
+ */
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    static NSString* cellId = @"BookCell";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: cellId];
+    
+    cell.textLabel.text = months[indexPath.row];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", values[indexPath.row]];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return months.count;
+}
 
 @end
