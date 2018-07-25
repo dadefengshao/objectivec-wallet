@@ -10,22 +10,11 @@ import UIKit
 
 class NewItemTableViewController: UITableViewController {
 
+    @IBOutlet weak var valueTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var typeSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var paymentSegmentedControl: UISegmentedControl!
-    
-    let categories: [String] = ["Sem categoria",
-                                "Alimentação",
-                                "Aluguel",
-                                "Farmácia",
-                                "Lazer",
-                                "Salário",
-                                "Saúde",
-                                "Telefonia",
-                                "Transporte",
-                                "Vestuário"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +32,15 @@ class NewItemTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        // TODO
+        let entry: Entry = Entry()
+        entry.num = 0 // TODO
+        entry.value = NSNumber(value: Float(self.valueTextField.text!)!)
+        entry.desc = self.descriptionTextField.text
+        entry.date = self.datePicker.date
+        entry.type = self.typeSegmentedControl.titleForSegment(at: self.typeSegmentedControl.selectedSegmentIndex)
+        entry.payment = self.paymentSegmentedControl.titleForSegment(at: self.paymentSegmentedControl.selectedSegmentIndex)
+        
+        
     }
 
     // MARK: - Table view data source
@@ -54,19 +51,5 @@ class NewItemTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
-    }
-}
-
-extension NewItemTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.categories.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categories[row]
     }
 }

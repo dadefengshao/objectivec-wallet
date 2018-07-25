@@ -21,6 +21,9 @@ class MonthViewController: UIViewController {
 
         self.monthLabel.text = month.month
         
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MonthViewController.addItem))
+        self.navigationItem.rightBarButtonItem = addButton
+        
         updateTotal()
     }
 
@@ -31,6 +34,11 @@ class MonthViewController: UIViewController {
 
     private func updateTotal() {
         self.monthTotalLabel.text = month.sumEntries().stringValue
+    }
+    
+    @objc private func addItem() {
+        print("oi")
+        performSegue(withIdentifier: "SegueNewItem", sender: self)
     }
 }
 

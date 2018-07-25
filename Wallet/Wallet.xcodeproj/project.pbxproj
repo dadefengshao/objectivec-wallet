@@ -20,6 +20,8 @@
 		B1839FBF2108A9D8001EAB1D /* Month.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FBE2108A9D8001EAB1D /* Month.storyboard */; };
 		B1839FC12108B02C001EAB1D /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FC02108B02C001EAB1D /* MonthViewController.swift */; };
 		B1839FC42108B21E001EAB1D /* Month.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FC32108B21E001EAB1D /* Month.m */; };
+		B1839FC62108EE65001EAB1D /* NewMonth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FC52108EE65001EAB1D /* NewMonth.storyboard */; };
+		B1839FC92108EE99001EAB1D /* NewMonthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FC82108EE99001EAB1D /* NewMonthViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,9 @@
 		B1839FC02108B02C001EAB1D /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
 		B1839FC22108B21E001EAB1D /* Month.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Month.h; sourceTree = "<group>"; };
 		B1839FC32108B21E001EAB1D /* Month.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Month.m; sourceTree = "<group>"; };
+		B1839FC52108EE65001EAB1D /* NewMonth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMonth.storyboard; sourceTree = "<group>"; };
+		B1839FC72108EE99001EAB1D /* NewMonthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMonthViewController.h; sourceTree = "<group>"; };
+		B1839FC82108EE99001EAB1D /* NewMonthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMonthViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,7 @@
 				B1839F9621076770001EAB1D /* Main.storyboard */,
 				B1839FAC21076AF0001EAB1D /* NewItem.storyboard */,
 				B1839FBE2108A9D8001EAB1D /* Month.storyboard */,
+				B1839FC52108EE65001EAB1D /* NewMonth.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +115,8 @@
 				B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */,
 				B1839FBA2107870D001EAB1D /* Wallet-Bridging-Header.h */,
 				B1839FC02108B02C001EAB1D /* MonthViewController.swift */,
+				B1839FC72108EE99001EAB1D /* NewMonthViewController.h */,
+				B1839FC82108EE99001EAB1D /* NewMonthViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 				B1839FBF2108A9D8001EAB1D /* Month.storyboard in Resources */,
 				B1839F9A21076772001EAB1D /* Assets.xcassets in Resources */,
 				B1839FAD21076AF0001EAB1D /* NewItem.storyboard in Resources */,
+				B1839FC62108EE65001EAB1D /* NewMonth.storyboard in Resources */,
 				B1839F9821076770001EAB1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +211,7 @@
 				B1839FBD21078C77001EAB1D /* Entry.m in Sources */,
 				B1839FA021076772001EAB1D /* main.m in Sources */,
 				B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */,
+				B1839FC92108EE99001EAB1D /* NewMonthViewController.m in Sources */,
 				B1839F9221076770001EAB1D /* AppDelegate.m in Sources */,
 				B1839FA821076A6B001EAB1D /* HomeViewController.m in Sources */,
 				B1839FB82107787A001EAB1D /* NewItemTableViewController.swift in Sources */,
