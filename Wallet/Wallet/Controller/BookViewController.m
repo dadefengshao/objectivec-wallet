@@ -8,9 +8,13 @@
 
 #import "BookViewController.h"
 
+// import to view swift classes
+#import "Wallet-Swift.h"
+
+#import "Month.h"
+
 @interface BookViewController ()<UITableViewDataSource, UITableViewDelegate> {
-    NSMutableArray<NSString *> *months;
-    NSMutableArray<NSNumber *> *values;
+    NSMutableArray<Month*> *months;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,20 +35,39 @@
 }
 
 - (void)initializeMonths {
-    months = [NSMutableArray arrayWithArray:@[@"Junho", @"Julho"]];
-    values = [NSMutableArray arrayWithArray:@[@-100.55f, @249.00f]];
+    Month *month1 = [[Month alloc] init];
+    month1.month = @"Janeiro";
+    
+    Entry *entry1 = [[Entry alloc] init];
+    entry1.desc = @"Entry 1";
+    
+    Entry *entry2 = [[Entry alloc] init];
+    entry2.desc = @"Entry 2";
+    
+    month1.entries = [NSMutableArray arrayWithArray:@[entry1, entry2]];
+    
+    Month *month2 = [[Month alloc] init];
+    month2.month = @"Fevereiro";
+    
+    Entry *entry3 = [[Entry alloc] init];
+    entry3.desc = @"Entry 1";
+    
+    month1.entries = [NSMutableArray arrayWithArray:@[entry3]];
+    
+    months = [NSMutableArray arrayWithArray:@[month1, month2]];
 }
 
 /*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"SegueMonth"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MonthViewController *destViewController = segue.destinationViewController;
+        destViewController.month = months[indexPath.row];
+    }
+}
 
 /*
  #pragma mark - Table View methods
@@ -54,15 +77,17 @@
     static NSString* cellId = @"BookCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: cellId];
     
-    cell.textLabel.text = months[indexPath.row];
-    
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", values[indexPath.row]];
+    cell.textLabel.text = months[indexPath.row].month;
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return months.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"SegueMonth" sender:self];
 }
 
 @end

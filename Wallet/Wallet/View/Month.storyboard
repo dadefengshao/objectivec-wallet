@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2bY-aL-9hu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Month View Controller-->
+        <scene sceneID="u9v-wf-X9d">
+            <objects>
+                <viewController id="2bY-aL-9hu" customClass="MonthViewController" customModule="Wallet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="56j-aR-Zm3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vTd-g5-Jq7">
+                                <rect key="frame" x="0.0" y="110" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonthCell" textLabel="o7v-qU-MWb" detailTextLabel="aOd-sA-zSF" style="IBUITableViewCellStyleValue1" id="efI-Io-ZfE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="efI-Io-ZfE" id="2t0-ap-5KA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o7v-qU-MWb">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aOd-sA-zSF">
+                                                    <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz2-mS-Hnc">
+                                <rect key="frame" x="16" y="36" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUF-Gk-NkI">
+                                <rect key="frame" x="146" y="73" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vTd-g5-Jq7" firstAttribute="top" secondItem="jUF-Gk-NkI" secondAttribute="bottom" constant="16" id="985-1K-NrZ"/>
+                            <constraint firstItem="pz2-mS-Hnc" firstAttribute="leading" secondItem="jGd-Rr-2fA" secondAttribute="leading" constant="16" id="KcP-Sh-iWY"/>
+                            <constraint firstItem="jGd-Rr-2fA" firstAttribute="bottom" secondItem="vTd-g5-Jq7" secondAttribute="bottom" id="Qs9-Qy-zB2"/>
+                            <constraint firstItem="jUF-Gk-NkI" firstAttribute="centerX" secondItem="jGd-Rr-2fA" secondAttribute="centerX" id="dGw-o6-oaG"/>
+                            <constraint firstItem="jGd-Rr-2fA" firstAttribute="trailing" secondItem="vTd-g5-Jq7" secondAttribute="trailing" id="gZu-Gj-sFO"/>
+                            <constraint firstItem="pz2-mS-Hnc" firstAttribute="top" secondItem="jGd-Rr-2fA" secondAttribute="top" constant="16" id="iOv-MR-eQZ"/>
+                            <constraint firstItem="jUF-Gk-NkI" firstAttribute="top" secondItem="pz2-mS-Hnc" secondAttribute="bottom" constant="16" id="igY-dO-wzw"/>
+                            <constraint firstItem="vTd-g5-Jq7" firstAttribute="leading" secondItem="jGd-Rr-2fA" secondAttribute="leading" id="sYY-yv-v22"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jGd-Rr-2fA"/>
+                    </view>
+                    <connections>
+                        <outlet property="monthLabel" destination="pz2-mS-Hnc" id="lxF-rP-0aE"/>
+                        <outlet property="monthTotalLabel" destination="jUF-Gk-NkI" id="4fw-jD-eh3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oPC-fR-fw4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="-17"/>
+        </scene>
+    </scenes>
+</document>

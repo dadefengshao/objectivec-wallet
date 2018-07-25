@@ -17,6 +17,9 @@
 		B1839FAD21076AF0001EAB1D /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FAC21076AF0001EAB1D /* NewItem.storyboard */; };
 		B1839FB82107787A001EAB1D /* NewItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */; };
 		B1839FBD21078C77001EAB1D /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FBC21078C77001EAB1D /* Entry.m */; };
+		B1839FBF2108A9D8001EAB1D /* Month.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FBE2108A9D8001EAB1D /* Month.storyboard */; };
+		B1839FC12108B02C001EAB1D /* MonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FC02108B02C001EAB1D /* MonthViewController.swift */; };
+		B1839FC42108B21E001EAB1D /* Month.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FC32108B21E001EAB1D /* Month.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		B1839FBA2107870D001EAB1D /* Wallet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		B1839FBB21078C77001EAB1D /* Entry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		B1839FBC21078C77001EAB1D /* Entry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		B1839FBE2108A9D8001EAB1D /* Month.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Month.storyboard; sourceTree = "<group>"; };
+		B1839FC02108B02C001EAB1D /* MonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthViewController.swift; sourceTree = "<group>"; };
+		B1839FC22108B21E001EAB1D /* Month.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Month.h; sourceTree = "<group>"; };
+		B1839FC32108B21E001EAB1D /* Month.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Month.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,7 @@
 				B1839F9B21076772001EAB1D /* LaunchScreen.storyboard */,
 				B1839F9621076770001EAB1D /* Main.storyboard */,
 				B1839FAC21076AF0001EAB1D /* NewItem.storyboard */,
+				B1839FBE2108A9D8001EAB1D /* Month.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 				B1839FAA21076AC7001EAB1D /* BookViewController.m */,
 				B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */,
 				B1839FBA2107870D001EAB1D /* Wallet-Bridging-Header.h */,
+				B1839FC02108B02C001EAB1D /* MonthViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,6 +118,8 @@
 			children = (
 				B1839FBB21078C77001EAB1D /* Entry.h */,
 				B1839FBC21078C77001EAB1D /* Entry.m */,
+				B1839FC22108B21E001EAB1D /* Month.h */,
+				B1839FC32108B21E001EAB1D /* Month.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1839F9D21076772001EAB1D /* LaunchScreen.storyboard in Resources */,
+				B1839FBF2108A9D8001EAB1D /* Month.storyboard in Resources */,
 				B1839F9A21076772001EAB1D /* Assets.xcassets in Resources */,
 				B1839FAD21076AF0001EAB1D /* NewItem.storyboard in Resources */,
 				B1839F9821076770001EAB1D /* Main.storyboard in Resources */,
@@ -185,6 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1839FC42108B21E001EAB1D /* Month.m in Sources */,
+				B1839FC12108B02C001EAB1D /* MonthViewController.swift in Sources */,
 				B1839FBD21078C77001EAB1D /* Entry.m in Sources */,
 				B1839FA021076772001EAB1D /* main.m in Sources */,
 				B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */,
