@@ -24,4 +24,14 @@
     [_entries addObject:entry];
 }
 
+-(NSNumber*) sumEntries {
+    NSNumber *sum = @0;
+    
+    for (Entry *entry in _entries) {
+        sum = [NSNumber numberWithFloat:([sum floatValue] + [entry.value floatValue])];
+    }
+    
+    return sum;
+}
+
 @end

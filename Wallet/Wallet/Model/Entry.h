@@ -12,6 +12,7 @@
 
 // public properties
 @property (nonatomic, readwrite) NSNumber* num;
+@property (nonatomic, readwrite) NSNumber* value;
 @property (nonatomic, readwrite) NSString* desc;
 @property (nonatomic, readwrite) NSDate* date;
 @property (nonatomic, readwrite) NSString* type;

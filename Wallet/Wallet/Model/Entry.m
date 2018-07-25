@@ -13,6 +13,7 @@
 -(instancetype) init {
     if (self = [super init]) {
         _num = self.num;
+        _value = self.value;
         _desc = self.desc;
         _date = self.date;
         _type = self.type;
