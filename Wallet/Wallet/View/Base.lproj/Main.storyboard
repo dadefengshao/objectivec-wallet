@@ -59,6 +59,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Not-FD-XrR" id="QPN-dX-fxL"/>
+                                    <outlet property="delegate" destination="Not-FD-XrR" id="kqL-ym-5uU"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,6 +78,9 @@
                         <viewLayoutGuide key="safeArea" id="PKX-6c-WRL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Caderneta" id="jcn-zb-HI9"/>
+                    <connections>
+                        <outlet property="tableView" destination="BjG-o9-PiV" id="Taa-Hy-WXU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dx4-k1-hmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,6 +149,11 @@
                         <viewLayoutGuide key="safeArea" id="rQ2-pr-qwK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="CkW-Jx-hUD"/>
+                    <connections>
+                        <outlet property="balance" destination="qgx-ge-74f" id="Hcs-Pc-6Qv"/>
+                        <outlet property="expense" destination="KCp-uw-XLW" id="Xba-Jx-q12"/>
+                        <outlet property="income" destination="qng-Si-h3Q" id="11m-H9-Ye6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBv-PG-WE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
