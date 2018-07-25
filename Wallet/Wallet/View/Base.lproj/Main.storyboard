@@ -99,7 +99,7 @@
         <scene sceneID="ufv-0q-iC6">
             <objects>
                 <navigationController id="V2D-nI-22L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Caderneta" id="zw9-8B-2zF"/>
+                    <tabBarItem key="tabBarItem" title="Caderneta" image="book" id="zw9-8B-2zF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O8k-9P-xGt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -280,7 +280,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rQ2-pr-qwK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="CkW-Jx-hUD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="CkW-Jx-hUD"/>
                     <connections>
                         <outlet property="balance" destination="qgx-ge-74f" id="Hcs-Pc-6Qv"/>
                         <outlet property="expense" destination="KCp-uw-XLW" id="Xba-Jx-q12"/>
@@ -310,4 +310,8 @@
             <point key="canvasLocation" x="-512" y="544"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" width="20" height="23"/>
+        <image name="home" width="25" height="24"/>
+    </resources>
 </document>
