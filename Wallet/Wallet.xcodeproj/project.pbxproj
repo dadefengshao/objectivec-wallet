@@ -16,6 +16,7 @@
 		B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FAA21076AC7001EAB1D /* BookViewController.m */; };
 		B1839FAD21076AF0001EAB1D /* NewItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1839FAC21076AF0001EAB1D /* NewItem.storyboard */; };
 		B1839FB82107787A001EAB1D /* NewItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */; };
+		B1839FBD21078C77001EAB1D /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = B1839FBC21078C77001EAB1D /* Entry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		B1839FAC21076AF0001EAB1D /* NewItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewItem.storyboard; sourceTree = "<group>"; };
 		B1839FB72107787A001EAB1D /* NewItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTableViewController.swift; sourceTree = "<group>"; };
 		B1839FBA2107870D001EAB1D /* Wallet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		B1839FBB21078C77001EAB1D /* Entry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		B1839FBC21078C77001EAB1D /* Entry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 		B1839FB321076B86001EAB1D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B1839FBB21078C77001EAB1D /* Entry.h */,
+				B1839FBC21078C77001EAB1D /* Entry.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1839FBD21078C77001EAB1D /* Entry.m in Sources */,
 				B1839FA021076772001EAB1D /* main.m in Sources */,
 				B1839FAB21076AC7001EAB1D /* BookViewController.m in Sources */,
 				B1839F9221076770001EAB1D /* AppDelegate.m in Sources */,

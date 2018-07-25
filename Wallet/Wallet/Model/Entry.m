@@ -10,4 +10,16 @@
 
 @implementation Entry
 
+-(instancetype) init {
+    if (self = [super init]) {
+        _num = self.num;
+        _desc = self.desc;
+        _date = self.date;
+        _type = self.type;
+        _category = self.category;
+        _payment = self.payment;
+    }
+    return self;
+}
+
 @end
