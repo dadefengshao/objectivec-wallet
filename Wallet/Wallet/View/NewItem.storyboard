@@ -142,6 +142,10 @@
                                                 </label>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pd4-NU-4E8">
                                                     <rect key="frame" x="111" y="5" width="256" height="216"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="fZj-1X-u05" id="V1m-LU-AEd"/>
+                                                        <outlet property="delegate" destination="fZj-1X-u05" id="70H-0U-dF3"/>
+                                                    </connections>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
@@ -195,9 +199,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Novo item" id="GDi-Bc-ivL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mD9-Jy-NsW"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jpi-4E-uNe"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mD9-Jy-NsW">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="fZj-1X-u05" id="Aij-fQ-wBE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jpi-4E-uNe">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="fZj-1X-u05" id="ofh-He-x8w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="categoryPicker" destination="Pd4-NU-4E8" id="KU1-L4-JYE"/>
+                        <outlet property="datePicker" destination="ca4-C3-5nr" id="XlF-eN-kQm"/>
+                        <outlet property="descriptionTextField" destination="bGh-1c-am3" id="pnH-q2-M4J"/>
+                        <outlet property="paymentSegmentedControl" destination="HZ3-LZ-FZ0" id="aVn-s6-wKv"/>
+                        <outlet property="typeSegmentedControl" destination="BMC-ib-9U7" id="Bjc-AH-dez"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3q8-0Z-niw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
