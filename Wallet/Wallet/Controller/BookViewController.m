@@ -40,9 +40,11 @@
     
     Entry *entry1 = [[Entry alloc] init];
     entry1.desc = @"Entry 1";
+    entry1.value = @10.00;
     
     Entry *entry2 = [[Entry alloc] init];
     entry2.desc = @"Entry 2";
+    entry2.value = @20.00;
     
     month1.entries = [NSMutableArray arrayWithArray:@[entry1, entry2]];
     
@@ -50,9 +52,10 @@
     month2.month = @"Fevereiro";
     
     Entry *entry3 = [[Entry alloc] init];
-    entry3.desc = @"Entry 1";
+    entry3.desc = @"Entry 3";
+    entry3.value = @3.00;
     
-    month1.entries = [NSMutableArray arrayWithArray:@[entry3]];
+    month2.entries = [NSMutableArray arrayWithArray:@[entry3]];
     
     months = [NSMutableArray arrayWithArray:@[month1, month2]];
 }
