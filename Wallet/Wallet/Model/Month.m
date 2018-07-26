@@ -14,7 +14,7 @@
 -(instancetype) init {
     if (self = [super init]) {
         _num = self.num;
-        _month = self.month;
+        _name = self.name;
         _entries = self.entries;
     }
     return self;

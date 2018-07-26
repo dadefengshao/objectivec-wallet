@@ -62,7 +62,7 @@
     static NSString* cellId = @"BookCell";
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: cellId];
     
-    cell.textLabel.text = months[indexPath.row].month;
+    cell.textLabel.text = months[indexPath.row].name;
     cell.detailTextLabel.text = [months[indexPath.row].sumEntries stringValue];
     
     return cell;

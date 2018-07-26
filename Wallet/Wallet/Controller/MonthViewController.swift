@@ -19,7 +19,7 @@ class MonthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.monthLabel.text = month.month
+        self.monthLabel.text = month.name
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MonthViewController.addItem))
         self.navigationItem.rightBarButtonItem = addButton

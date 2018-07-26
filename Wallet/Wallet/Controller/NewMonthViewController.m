@@ -46,7 +46,7 @@
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
     Month *month = [[Month alloc] init];
-    month.month = [_months objectAtIndex:[_monthPicker selectedRowInComponent:0]];
+    month.name = [_months objectAtIndex:[_monthPicker selectedRowInComponent:0]];
     [services addMonth:month];
     [self dismissViewControllerAnimated:true completion:nil];
 }

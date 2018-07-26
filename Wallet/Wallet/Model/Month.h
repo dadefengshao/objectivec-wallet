@@ -13,7 +13,7 @@
 
 // public properties
 @property (nonatomic, readwrite) NSNumber* num;
-@property (nonatomic, readwrite) NSString* month;
+@property (nonatomic, readwrite) NSString* name;
 @property (nonatomic, readwrite) NSMutableArray<Entry *>* entries;
 
 // public methods

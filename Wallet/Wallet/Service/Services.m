@@ -23,7 +23,7 @@
 //private methods
 -(NSMutableArray<Month*>*)months {
     Month *month1 = [[Month alloc] init];
-    month1.month = @"Janeiro";
+    month1.name = @"Janeiro";
     
     Entry *entry1 = [[Entry alloc] init];
     entry1.desc = @"Entry 1";
@@ -36,7 +36,7 @@
     month1.entries = [NSMutableArray arrayWithArray:@[entry1, entry2]];
     
     Month *month2 = [[Month alloc] init];
-    month2.month = @"Fevereiro";
+    month2.name = @"Fevereiro";
     
     Entry *entry3 = [[Entry alloc] init];
     entry3.desc = @"Entry 3";
@@ -55,7 +55,7 @@
 }
 
 -(void)addMonth:(Month *)month {
-    NSLog(@"addMonth %@", month.month);
+    NSLog(@"addMonth %@", month.name);
 
     // TODO: add month
     
