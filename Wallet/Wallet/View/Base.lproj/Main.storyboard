@@ -66,7 +66,7 @@
                     <navigationItem key="navigationItem" title="Caderneta" id="bsz-Ab-xAs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oDJ-xn-Ow1">
                             <connections>
-                                <segue destination="EPL-Cy-Upi" kind="show" id="LRL-5I-Rnf"/>
+                                <segue destination="EPL-Cy-Upi" kind="showDetail" id="LRL-5I-Rnf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -220,7 +220,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receitas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qng-Si-h3Q">
-                                                        <rect key="frame" x="41" y="55" width="81" height="25.5"/>
+                                                        <rect key="frame" x="40" y="55" width="81" height="25.5"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
