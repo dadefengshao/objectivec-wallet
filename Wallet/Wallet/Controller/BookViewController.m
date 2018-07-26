@@ -29,6 +29,12 @@
     
     services = [[Services alloc] init];
     services.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"viewWillAppear");
+    [super viewWillAppear:animated];
+
     [services retrieveMonths];
 }
 

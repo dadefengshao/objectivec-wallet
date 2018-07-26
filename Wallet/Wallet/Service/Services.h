@@ -16,6 +16,7 @@
 -(void)receiveBalance:(NSNumber*)balance;
 -(void)receiveSumIncomes:(NSNumber*)incomes;
 -(void)receiveSumExpenses:(NSNumber*)expenses;
+-(void)didAddMonth;
 
 @end
 
@@ -31,5 +32,6 @@
 -(void)retrieveBalance;
 -(void)retrieveSumIncomes;
 -(void)retrieveSumExpenses;
+-(void)addMonth:(Month*)month;
 
 @end

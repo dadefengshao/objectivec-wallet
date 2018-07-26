@@ -7,8 +7,10 @@
 //
 
 #import "NewMonthViewController.h"
+#import "Services.h"
 
-@interface NewMonthViewController ()<UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface NewMonthViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, ServicesDelegate> {
+    Services *services;
     NSArray *_months;
 }
 
@@ -20,6 +22,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    services = [[Services alloc] init];
+    services.delegate = self;
     
     _months = @[@"Janeiro",
                 @"Fevereiro",
@@ -39,14 +44,19 @@
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+    Month *month = [[Month alloc] init];
+    month.month = [_months objectAtIndex:[_monthPicker selectedRowInComponent:0]];
+    [services addMonth:month];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
+
+- (IBAction)cancelButtonPressed:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+/*
+ #pragma mark - Picker View delegate methods
 */
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -59,6 +69,14 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return _months[row];
+}
+
+/*
+ #pragma mark - Picker View delegate methods
+ */
+
+-(void)didAddMonth {
+    NSLog(@"didAddMonth");
 }
 
 @end

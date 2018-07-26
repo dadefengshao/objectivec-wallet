@@ -16,6 +16,7 @@
     if (self = [super init]) {
         _delegate = self.delegate;
     }
+    
     return self;
 }
 
@@ -51,6 +52,14 @@
     NSLog(@"retrieveMonths");
 
     [_delegate receiveMonths:[NSMutableArray arrayWithArray:[self months]]];
+}
+
+-(void)addMonth:(Month *)month {
+    NSLog(@"addMonth %@", month.month);
+
+    // TODO: add month
+    
+    [_delegate didAddMonth];
 }
 
 -(void)retrieveBalance {
