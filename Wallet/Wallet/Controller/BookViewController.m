@@ -57,6 +57,7 @@
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier: cellId];
     
     cell.textLabel.text = months[indexPath.row].month;
+    cell.detailTextLabel.text = [months[indexPath.row].sumEntries stringValue];
     
     return cell;
 }
