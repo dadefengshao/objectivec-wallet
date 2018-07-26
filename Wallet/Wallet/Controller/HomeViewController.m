@@ -27,6 +27,8 @@
     services = [[Services alloc] init];
     services.delegate = self;
     [services retrieveBalance];
+    [services retrieveSumIncomes];
+    [services retrieveSumExpenses];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +44,14 @@
     NSLog(@"receiveBalance");
     
     _balance.text = [balance stringValue];
+}
+
+-(void)receiveSumIncomes:(NSNumber*)incomes {
+    _income.text = [incomes stringValue];
+}
+
+-(void)receiveSumExpenses:(NSNumber*)expenses {
+    _expense.text = [expenses stringValue];
 }
 
 @end

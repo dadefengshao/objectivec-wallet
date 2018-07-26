@@ -20,5 +20,7 @@
 -(instancetype) init;
 -(void) addEntry: (Entry*) entry;
 -(NSNumber*) sumEntries;
+-(NSNumber*) sumIncomes;
+-(NSNumber*) sumExpenses;
 
 @end

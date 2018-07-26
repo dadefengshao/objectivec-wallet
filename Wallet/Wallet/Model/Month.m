@@ -34,4 +34,30 @@
     return sum;
 }
 
+-(NSNumber*) sumIncomes {
+    NSNumber *sumIncomes = @0;
+    NSNumber *zero = @0;
+
+    for (Entry *entry in _entries) {
+        if (entry.value > zero) {
+            sumIncomes = [NSNumber numberWithFloat:([sumIncomes floatValue] + [entry.value floatValue])];
+        }
+    }
+    
+    return sumIncomes;
+}
+
+-(NSNumber*) sumExpenses {
+    NSNumber *sumExpenses = @0;
+    NSNumber *zero = @0;
+    
+    for (Entry *entry in _entries) {
+        if (entry.value < zero) {
+            sumExpenses = [NSNumber numberWithFloat:([sumExpenses floatValue] + [entry.value floatValue])];
+        }
+    }
+    
+    return sumExpenses;
+}
+
 @end

@@ -14,6 +14,8 @@
 @optional
 -(void)receiveMonths:(NSMutableArray<Month*>*)months;
 -(void)receiveBalance:(NSNumber*)balance;
+-(void)receiveSumIncomes:(NSNumber*)incomes;
+-(void)receiveSumExpenses:(NSNumber*)expenses;
 
 @end
 
@@ -27,5 +29,7 @@
 -(instancetype) init;
 -(void)retrieveMonths;
 -(void)retrieveBalance;
+-(void)retrieveSumIncomes;
+-(void)retrieveSumExpenses;
 
 @end

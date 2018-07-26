@@ -54,7 +54,7 @@
 }
 
 -(void)retrieveBalance {
-    NSLog(@"retrieveMonths");
+    NSLog(@"retrieveBalance");
     
     NSMutableArray<Month*>* months = [self months];
     NSNumber* balance = @0;
@@ -64,6 +64,33 @@
     }
     
     [_delegate receiveBalance:balance];
+}
+
+-(void)retrieveSumIncomes {
+    NSLog(@"retrieveSumIncomes");
+    
+    NSMutableArray<Month*>* months = [self months];
+    NSNumber* incomes = @0;
+    
+    for (Month *month in months) {
+        incomes = [NSNumber numberWithFloat:([incomes floatValue] + [[month sumIncomes] floatValue])];
+    }
+    
+    [_delegate receiveSumIncomes:incomes];
+}
+
+-(void)retrieveSumExpenses {
+    NSLog(@"retrieveSumIncomes");
+    
+    NSMutableArray<Month*>* months = [self months];
+    NSNumber* expenses = @0;
+    
+    for (Month *month in months) {
+        expenses = [NSNumber numberWithFloat:([expenses floatValue] + [[month sumExpenses] floatValue])];
+    }
+    
+    [_delegate receiveSumExpenses:expenses];
+    
 }
 
 @end
