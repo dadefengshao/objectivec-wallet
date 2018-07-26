@@ -11,8 +11,9 @@
 
 @protocol ServicesDelegate
 
-@required
+@optional
 -(void)receiveMonths:(NSMutableArray<Month*>*)months;
+-(void)receiveBalance:(NSNumber*)balance;
 
 @end
 
@@ -25,5 +26,6 @@
 // methods
 -(instancetype) init;
 -(void)retrieveMonths;
+-(void)retrieveBalance;
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "HomeViewController.h"
+#include "Services.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<ServicesDelegate> {
+    Services *services;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *balance;
 @property (weak, nonatomic) IBOutlet UILabel *expense;
@@ -20,7 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    services = [[Services alloc] init];
+    services.delegate = self;
+    [services retrieveBalance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,13 +35,13 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - ServicesDelegate methods
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)receiveBalance:(NSNumber *)balance {
+    NSLog(@"receiveBalance");
+    
+    _balance.text = [balance stringValue];
 }
-*/
 
 @end

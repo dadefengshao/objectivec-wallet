@@ -19,8 +19,8 @@
     return self;
 }
 
--(void)retrieveMonths {
-    NSLog(@"retrieveMonths");
+//private methods
+-(NSMutableArray<Month*>*)months {
     Month *month1 = [[Month alloc] init];
     month1.month = @"Janeiro";
     
@@ -42,8 +42,28 @@
     entry3.value = @3.00;
     
     month2.entries = [NSMutableArray arrayWithArray:@[entry3]];
+    
+    return [NSMutableArray arrayWithArray:@[month1, month2]];
+}
 
-    [_delegate receiveMonths:[NSMutableArray arrayWithArray:@[month1, month2]]];
+// public methods
+-(void)retrieveMonths {
+    NSLog(@"retrieveMonths");
+
+    [_delegate receiveMonths:[NSMutableArray arrayWithArray:[self months]]];
+}
+
+-(void)retrieveBalance {
+    NSLog(@"retrieveMonths");
+    
+    NSMutableArray<Month*>* months = [self months];
+    NSNumber* balance = @0;
+    
+    for (Month *month in months) {
+        balance = [NSNumber numberWithFloat:([balance floatValue] + [[month sumEntries] floatValue])];
+    }
+    
+    [_delegate receiveBalance:balance];
 }
 
 @end
