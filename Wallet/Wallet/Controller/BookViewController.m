@@ -11,9 +11,10 @@
 // import to view swift classes
 #import "Wallet-Swift.h"
 
-#import "Month.h"
+#include "Services.h"
 
-@interface BookViewController ()<UITableViewDataSource, UITableViewDelegate> {
+@interface BookViewController ()<UITableViewDataSource, UITableViewDelegate, ServicesDelegate> {
+    Services *services;
     NSMutableArray<Month*> *months;
 }
 
@@ -26,38 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self initializeMonths];
+    services = [[Services alloc] init];
+    services.delegate = self;
+    [services retrieveMonths];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)initializeMonths {
-    Month *month1 = [[Month alloc] init];
-    month1.month = @"Janeiro";
-    
-    Entry *entry1 = [[Entry alloc] init];
-    entry1.desc = @"Entry 1";
-    entry1.value = @10.00;
-    
-    Entry *entry2 = [[Entry alloc] init];
-    entry2.desc = @"Entry 2";
-    entry2.value = @20.00;
-    
-    month1.entries = [NSMutableArray arrayWithArray:@[entry1, entry2]];
-    
-    Month *month2 = [[Month alloc] init];
-    month2.month = @"Fevereiro";
-    
-    Entry *entry3 = [[Entry alloc] init];
-    entry3.desc = @"Entry 3";
-    entry3.value = @3.00;
-    
-    month2.entries = [NSMutableArray arrayWithArray:@[entry3]];
-    
-    months = [NSMutableArray arrayWithArray:@[month1, month2]];
 }
 
 /*
@@ -91,6 +67,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"SegueMonth" sender:self];
+}
+
+/*
+ #pragma mark - ServicesDelegate methods
+ */
+
+- (void)receiveMonths:(NSMutableArray<Month*>*)months {
+    NSLog(@"receiveMonths");
+    self->months = months;
+    [_tableView reloadData];
 }
 
 @end
