@@ -30,6 +30,7 @@
 
 -(void)addMonth:(Month *)month {
     NSLog(@"addMonth %@", month.name);
+    month.num = @0;
 
     NSArray<Month*>* months = [DatabaseManager addPropertyListWithMonth:month];
     

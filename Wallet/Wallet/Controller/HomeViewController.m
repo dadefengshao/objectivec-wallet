@@ -47,10 +47,14 @@
 }
 
 -(void)receiveSumIncomes:(NSNumber*)incomes {
+    NSLog(@"receiveSumIncomes");
+
     _income.text = [incomes stringValue];
 }
 
 -(void)receiveSumExpenses:(NSNumber*)expenses {
+    NSLog(@"receiveSumExpenses");
+
     _expense.text = [expenses stringValue];
 }
 
