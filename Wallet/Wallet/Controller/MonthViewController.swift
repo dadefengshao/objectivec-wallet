@@ -13,9 +13,12 @@ class MonthViewController: UIViewController {
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var monthTotalLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     var month: Month!
-
+    
+    var services: Services = Services()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,20 +28,31 @@ class MonthViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = addButton
         
         updateTotal()
+        
+        services.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        services.retrieveMonth(month.name)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    private func updateTotal() {
+    func updateTotal() {
         self.monthTotalLabel.text = month.sumEntries().stringValue
     }
     
     @objc private func addItem() {
-        print("oi")
         performSegue(withIdentifier: "SegueNewItem", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nav = segue.destination as? UINavigationController
+        if let destiny = nav?.topViewController as? NewItemTableViewController {
+            destiny.month = self.month
+        }
     }
 }
 
@@ -55,5 +69,13 @@ extension MonthViewController: UITableViewDelegate, UITableViewDataSource {
         cell.detailTextLabel?.text = entry.value.stringValue
         
         return cell
+    }
+}
+
+extension MonthViewController: ServicesDelegate {
+    func didReceive(_ month: Month!) {
+        self.month = month
+        updateTotal()
+        self.tableView.reloadData()
     }
 }

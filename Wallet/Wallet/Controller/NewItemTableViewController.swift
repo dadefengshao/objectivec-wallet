@@ -16,11 +16,17 @@ class NewItemTableViewController: UITableViewController {
     @IBOutlet weak var typeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var paymentSegmentedControl: UISegmentedControl!
     
+    var services: Services = Services()
+    
+    var month: Month!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // clean empty lines of table view
         self.tableView.tableFooterView = UIView()
+        
+        self.services.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +46,9 @@ class NewItemTableViewController: UITableViewController {
         entry.type = self.typeSegmentedControl.titleForSegment(at: self.typeSegmentedControl.selectedSegmentIndex)
         entry.payment = self.paymentSegmentedControl.titleForSegment(at: self.paymentSegmentedControl.selectedSegmentIndex)
         
+        self.services.addEntry(month, entry)
         
+        self.dismiss(animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
@@ -51,5 +59,11 @@ class NewItemTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
+    }
+}
+
+extension NewItemTableViewController: ServicesDelegate {
+    func didAddEntry(_ months: [Month]!) {
+        print("didAddEntry")
     }
 }

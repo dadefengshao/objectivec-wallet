@@ -99,6 +99,7 @@
                     <connections>
                         <outlet property="monthLabel" destination="pz2-mS-Hnc" id="lxF-rP-0aE"/>
                         <outlet property="monthTotalLabel" destination="jUF-Gk-NkI" id="4fw-jD-eh3"/>
+                        <outlet property="tableView" destination="vTd-g5-Jq7" id="2Jo-31-Lkl"/>
                         <segue destination="GXr-jk-7g6" kind="showDetail" identifier="SegueNewItem" id="xkX-eX-zoH"/>
                     </connections>
                 </viewController>

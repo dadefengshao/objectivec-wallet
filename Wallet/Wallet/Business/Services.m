@@ -28,6 +28,18 @@
     [_delegate receiveMonths:[DatabaseManager getPropertyList]];
 }
 
+-(void)retrieveMonth:(NSString*)name {
+    NSLog(@"retrieveMonth %@", name);
+    
+    NSArray<Month*>* months = [DatabaseManager getPropertyList];
+    
+    for (Month* month in months) {
+        if (month.name == name) {
+            [_delegate didReceiveMonth:month];
+        }
+    }
+}
+
 -(void)addMonth:(Month *)month {
     NSLog(@"addMonth %@", month.name);
     month.num = @0;
@@ -37,17 +49,19 @@
     [_delegate didAddMonth:months];
 }
 
+-(void)addEntry:(Month*)month :(Entry*)entry {
+    NSLog(@"addEntry %@", entry.desc);
+    
+    NSArray<Month*>* months = [DatabaseManager addPropertyListWithMonth:month entry:entry];
+    
+    [_delegate didAddEntry:months];
+}
+
 -(void)retrieveBalance {
     NSLog(@"retrieveBalance");
     
     NSArray<Month*>* months = [DatabaseManager getPropertyList];
     NSNumber* balance = @0;
-    
-//    for (Month *month in months) {
-//        for (Entry *entry in month.entries) {
-//            NSLog(@"entry: %@, %@", entry.desc, entry.value);
-//        }
-//    }
 
     for (Month *month in months) {
         balance = [NSNumber numberWithFloat:([balance floatValue] + [[month sumEntries] floatValue])];

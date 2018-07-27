@@ -203,7 +203,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="ca4-C3-5nr" id="XlF-eN-kQm"/>
-                        <outlet property="descriptionTextField" destination="bGh-1c-am3" id="pnH-q2-M4J"/>
+                        <outlet property="descriptionTextField" destination="eTb-xG-IdM" id="6Wg-Hx-RTj"/>
                         <outlet property="paymentSegmentedControl" destination="HZ3-LZ-FZ0" id="aVn-s6-wKv"/>
                         <outlet property="typeSegmentedControl" destination="BMC-ib-9U7" id="Bjc-AH-dez"/>
                         <outlet property="valueTextField" destination="bGh-1c-am3" id="LfV-Kl-0oS"/>

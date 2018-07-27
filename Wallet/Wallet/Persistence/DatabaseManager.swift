@@ -128,38 +128,36 @@ class DatabaseManager: NSObject {
     }
     
     static func addPropertyList(month: Month, entry: Entry) -> [Month] {
-        let month1: Month = Month()
-        month1.name = "Janeiro";
-    
-        let entry1: Entry = Entry()
-        entry1.desc = "Bepid";
-        entry1.value = 1000
-    
-        let entry2: Entry = Entry()
-        entry2.desc = "Pizza";
-        entry2.value = -50
-    
-        month1.entries = [entry1, entry2]
-    
-        let month2: Month = Month()
-        month2.name = "Fevereiro";
-    
-        let entry3: Entry = Entry()
-        entry3.desc = "Camiseta";
-        entry3.value = -100
-    
-        let entry4: Entry = Entry()
-        entry4.desc = "Pizza de peperoni";
-        entry4.value = -50
+        let months: [Month] = getPropertyList()
         
-        month2.entries = [entry3, entry4]
-        
-        if month1.name == month.name {
-            month1.addEntry(entry)
-        } else if month2.name == month.name {
-            month2.addEntry(entry)
+        for m in months where m.name == month.name {
+            m.entries.add(entry)
         }
-    
-        return [month1, month2]
+        // recreate the plist using memory objects
+        let path = getPathOfPropertyList()
+        let arrayOpt = NSMutableArray(contentsOfFile: path)
+        
+        if let array = arrayOpt {
+            for elem in array {
+                let elemDict = elem as! NSDictionary
+                let entriesArray = elemDict["entries"] as! NSMutableArray
+                let name = elemDict["name"] as! String
+                
+                if name == month.name {
+                    var dictEntry: [String:Any] = [:]
+                    dictEntry["num"] = entry.num
+                    dictEntry["value"] = entry.value
+                    dictEntry["desc"] = entry.desc
+                    dictEntry["date"] = entry.date
+                    dictEntry["type"] = entry.type
+                    dictEntry["payment"] = entry.payment
+                    entriesArray.add(dictEntry)
+                }
+            }
+            
+            array.write(toFile: path, atomically: false)
+        }
+        
+        return months
     }
 }

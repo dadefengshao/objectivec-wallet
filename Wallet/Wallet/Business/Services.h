@@ -13,10 +13,12 @@
 
 @optional
 -(void)receiveMonths:(NSArray<Month*>*)months;
+-(void)didReceiveMonth:(Month*)month;
 -(void)receiveBalance:(NSNumber*)balance;
 -(void)receiveSumIncomes:(NSNumber*)incomes;
 -(void)receiveSumExpenses:(NSNumber*)expenses;
 -(void)didAddMonth:(NSArray<Month*>*)months;
+-(void)didAddEntry:(NSArray<Month*>*)months;
 
 @end
 
@@ -29,9 +31,10 @@
 // methods
 -(instancetype) init;
 -(void)retrieveMonths;
+-(void)retrieveMonth:(NSString*)name;
 -(void)retrieveBalance;
 -(void)retrieveSumIncomes;
 -(void)retrieveSumExpenses;
 -(void)addMonth:(Month*)month;
-
+-(void)addEntry:(Month*)month :(Entry*)entry;
 @end
