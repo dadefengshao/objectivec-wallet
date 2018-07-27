@@ -35,69 +35,63 @@ class DatabaseManager: NSObject {
         
         if hasPropertyList() {
             print("hasPropertyList: true")
-            let directories: [String]? = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,FileManager.SearchPathDomainMask.allDomainsMask, true)
-            if let directories = directories {
-                let path: String = directories[0] + "/Data.plist"
-                
-                let arrayOpt = NSArray(contentsOfFile: path)
-                
-                if let array = arrayOpt {
-                    for elem in array {
+            let arrayOpt = NSArray(contentsOfFile: getPathOfPropertyList())
+            
+            if let array = arrayOpt {
+                for elem in array {
+                    let elemDict = elem as! NSDictionary
+                    let month: Month = Month()
+                    
+                    if let num = elemDict["num"] {
+                        month.num = num as! NSNumber
+                    }
+                    if let name = elemDict["name"] {
+                        month.name = name as! String
+                    }
+                    
+                    let entriesArray = elemDict["entries"] as! NSArray
+                    
+                    for elem in entriesArray {
                         let elemDict = elem as! NSDictionary
-                        let month: Month = Month()
+                        let entry: Entry = Entry()
                         
                         if let num = elemDict["num"] {
-                            month.num = num as! NSNumber
+                            entry.num = num as! NSNumber
                         }
-                        if let name = elemDict["name"] {
-                            month.name = name as! String
+                        if let value = elemDict["value"] {
+                            entry.value = value as! NSNumber
                         }
-                        
-                        let entriesArray = elemDict["entries"] as! NSArray
-                        
-                        for elem in entriesArray {
-                            let elemDict = elem as! NSDictionary
-                            let entry: Entry = Entry()
-                            
-                            if let num = elemDict["num"] {
-                                entry.num = num as! NSNumber
-                            }
-                            if let value = elemDict["value"] {
-                                entry.value = value as! NSNumber
-                            }
-                            if let desc = elemDict["desc"] {
-                                entry.desc = desc as! String
-                            }
-                            if let date = elemDict["date"] {
-                                entry.date = date as! Date
-                            }
-                            if let type = elemDict["type"] {
-                                entry.type = type as! String
-                            }
-                            if let payment = elemDict["payment"] {
-                                entry.payment = payment as! String
-                            }
-                            
-                            month.addEntry(entry)
+                        if let desc = elemDict["desc"] {
+                            entry.desc = desc as! String
+                        }
+                        if let date = elemDict["date"] {
+                            entry.date = date as! Date
+                        }
+                        if let type = elemDict["type"] {
+                            entry.type = type as! String
+                        }
+                        if let payment = elemDict["payment"] {
+                            entry.payment = payment as! String
                         }
                         
-                        months.append(month)
+                        month.addEntry(entry)
                     }
+                    
+                    months.append(month)
                 }
             }
         } else {
             // create plist file
             print("hasPropertyList: false")
-            let directories: [String]? = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,FileManager.SearchPathDomainMask.allDomainsMask, true)
-            if let directories = directories {
-                let path: String = directories[0] + "/Data.plist"
-                let arrayContent: [NSDictionary] = []
-                let plistContent = NSArray(array: arrayContent)
-                
-                let created = plistContent.write(toFile: path, atomically: false)
-                if created {
-                    print("Created \(path)")
-                }
+            
+            let path = getPathOfPropertyList()
+            
+            let arrayContent: [NSDictionary] = []
+            let plistContent = NSArray(array: arrayContent)
+            
+            let created = plistContent.write(toFile: path, atomically: false)
+            if created {
+                print("Created \(path)")
             }
         }
         
@@ -117,20 +111,16 @@ class DatabaseManager: NSObject {
         var months: [Month] = getPropertyList()
         months.append(month)
 
-        let directories: [String]? = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory,FileManager.SearchPathDomainMask.allDomainsMask, true)
-        if let directories = directories {
-            let path: String = directories[0] + "/Data.plist"
-            
-            let arrayOpt = NSMutableArray(contentsOfFile: path)
-            
-            if let array = arrayOpt {
-                let dictEntry: [NSDictionary] = []
-                let dictMonth: NSDictionary = ["num": month.num, "name": month.name, "entries": dictEntry]
-                array.add(dictMonth)
-                let added = array.write(toFile: path, atomically: false)
-                if added {
-                    print("Added month to \(path)")
-                }
+        let path = getPathOfPropertyList()
+        let arrayOpt = NSMutableArray(contentsOfFile: path)
+        
+        if let array = arrayOpt {
+            let dictEntry: [NSDictionary] = []
+            let dictMonth: NSDictionary = ["num": month.num, "name": month.name, "entries": dictEntry]
+            array.add(dictMonth)
+            let added = array.write(toFile: path, atomically: false)
+            if added {
+                print("Added month to \(path)")
             }
         }
         
