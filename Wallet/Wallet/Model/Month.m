@@ -15,7 +15,7 @@
     if (self = [super init]) {
         _num = self.num;
         _name = self.name;
-        _entries = self.entries;
+        _entries = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -39,7 +39,8 @@
     NSNumber *zero = @0;
 
     for (Entry *entry in _entries) {
-        if (entry.value > zero) {
+        if (entry.value.floatValue > zero.floatValue) {
+//            NSLog(@"value: %@", entry.value);
             sumIncomes = [NSNumber numberWithFloat:([sumIncomes floatValue] + [entry.value floatValue])];
         }
     }
@@ -52,7 +53,7 @@
     NSNumber *zero = @0;
     
     for (Entry *entry in _entries) {
-        if (entry.value < zero) {
+        if (entry.value.floatValue < zero.floatValue) {
             sumExpenses = [NSNumber numberWithFloat:([sumExpenses floatValue] + [entry.value floatValue])];
         }
     }
