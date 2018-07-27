@@ -11,10 +11,11 @@
 
 @interface NewMonthViewController ()<UIPickerViewDelegate, UIPickerViewDataSource, ServicesDelegate> {
     Services *services;
-    NSArray *_months;
+    NSMutableArray *_monthsString;
 }
 
 @property (weak, nonatomic) IBOutlet UIPickerView *monthPicker;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveBarButtonItem;
 
 @end
 
@@ -26,27 +27,34 @@
     services = [[Services alloc] init];
     services.delegate = self;
     
-    _months = @[@"Janeiro",
-                @"Fevereiro",
-                @"Março",
-                @"Abril",
-                @"Maio",
-                @"Junho",
-                @"Julho",
-                @"Agosto",
-                @"Setembro",
-                @"Outubro",
-                @"Novembro",
-                @"Dezembro"];
+    _monthsString = [[NSMutableArray alloc] init];
+    [_monthsString addObject:@"Janeiro"];
+    [_monthsString addObject:@"Fevereiro"];
+    [_monthsString addObject:@"Março"];
+    [_monthsString addObject:@"Abril"];
+    [_monthsString addObject:@"Maio"];
+    [_monthsString addObject:@"Junho"];
+    [_monthsString addObject:@"Julho"];
+    [_monthsString addObject:@"Agosto"];
+    [_monthsString addObject:@"Setembro"];
+    [_monthsString addObject:@"Outubro"];
+    [_monthsString addObject:@"Novembro"];
+    [_monthsString addObject:@"Dezembro"];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [services retrieveMonths];
+}
+
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
     Month *month = [[Month alloc] init];
-    month.name = [_months objectAtIndex:[_monthPicker selectedRowInComponent:0]];
+    month.name = [_monthsString objectAtIndex:[_monthPicker selectedRowInComponent:0]];
     [services addMonth:month];
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -60,7 +68,7 @@
 */
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _months.count;
+    return _monthsString.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -68,7 +76,7 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _months[row];
+    return _monthsString[row];
 }
 
 /*
@@ -79,6 +87,19 @@
     NSLog(@"didAddMonth");
 }
 
-@end
+-(void)receiveMonths:(NSArray<Month*>*)months {
+    NSMutableArray<NSString*> *existingMonths = [[NSMutableArray alloc] init];
+    
+    for (Month* month in months) {
+        [existingMonths addObject:month.name];
+    }
+    
+    [_monthsString removeObjectsInArray: existingMonths];
+    
+    if ([_monthsString count] == 0) {
+        [_saveBarButtonItem setEnabled:false];
+    }
+}
 
+@end
 

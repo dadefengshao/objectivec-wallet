@@ -49,6 +49,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="monthPicker" destination="htA-Kw-bsu" id="Svo-k1-WOP"/>
+                        <outlet property="saveBarButtonItem" destination="LqV-4U-CoU" id="M7N-aD-ftg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmC-lp-Pa2" userLabel="First Responder" sceneMemberID="firstResponder"/>
