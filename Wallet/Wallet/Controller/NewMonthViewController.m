@@ -75,7 +75,7 @@
  #pragma mark - Picker View delegate methods
  */
 
--(void)didAddMonth {
+-(void)didAddMonth:(NSArray<Month*>*)months {
     NSLog(@"didAddMonth");
 }
 
