@@ -40,10 +40,14 @@ class NewItemTableViewController: UITableViewController {
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         let entry: Entry = Entry()
         entry.num = 0 // TODO
-        entry.value = NSNumber(value: Float(self.valueTextField.text!)!)
         entry.desc = self.descriptionTextField.text
         entry.date = self.datePicker.date
         entry.type = self.typeSegmentedControl.titleForSegment(at: self.typeSegmentedControl.selectedSegmentIndex)
+        if entry.type == "Despesa" {
+            entry.value = NSNumber(value: -Float(self.valueTextField.text!)!)
+        } else {
+            entry.value = NSNumber(value: Float(self.valueTextField.text!)!)
+        }
         entry.payment = self.paymentSegmentedControl.titleForSegment(at: self.paymentSegmentedControl.selectedSegmentIndex)
         
         self.services.addEntry(month, entry)

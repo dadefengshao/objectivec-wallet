@@ -26,6 +26,11 @@
    
     services = [[Services alloc] init];
     services.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     [services retrieveBalance];
     [services retrieveSumIncomes];
     [services retrieveSumExpenses];
